@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Dwi Wulandari ✨</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #ffa0ac 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .heart {
+            position: absolute;
+            color: rgba(255, 182, 193, 0.6);
+            animation: float 6s ease-in-out infinite;
+            font-size: 20px;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .title {
+            font-size: 3.5rem;
+            color: #8B0000;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ff1493, #ff69b4, #ff1493);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #8B0000;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(255, 20, 147, 0.2);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 182, 193, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 182, 193, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+
+        .card:hover::before {
+            opacity: 1;
+            animation: shimmer 1.5s ease-in-out;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(255, 20, 147, 0.3);
+        }
+
+        .card h2 {
+            color: #C2185B;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .card p {
+            color: #8B0000;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        .photo-section {
+            text-align: center;
+            margin: 50px 0;
+            animation: fadeIn 1s ease-out 1s both;
+        }
+
+        .photo-frame {
+            display: inline-block;
+            padding: 20px;
+            background: linear-gradient(45deg, #ff69b4, #ff1493, #ff69b4);
+            border-radius: 50%;
+            box-shadow: 0 20px 40px rgba(255, 20, 147, 0.3);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .photo-placeholder {
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #ff1493;
+        }
+
+        .message-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: 0 25px 50px rgba(255, 20, 147, 0.2);
+            margin: 50px 0;
+            animation: fadeInUp 1s ease-out 1.5s both;
+            border: 3px solid rgba(255, 182, 193, 0.4);
+        }
+
+        .love-message {
+            font-size: 1.3rem;
+            color: #8B0000;
+            line-height: 2;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .signature {
+            font-size: 1.5rem;
+            color: #C2185B;
+            font-weight: bold;
+        }
+
+        .interactive-button {
+            background: linear-gradient(45deg, #ff1493, #ff69b4);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(255, 20, 147, 0.3);
+            margin: 20px 10px;
+        }
+
+        .interactive-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(255, 20, 147, 0.4);
+            background: linear-gradient(45deg, #ff69b4, #ff1493);
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .sparkle {
+            position: absolute;
+            color: #ff1493;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .title {
+                font-size: 2.5rem;
+            }
+            
+            .card {
+                padding: 30px 20px;
+            }
+            
+            .message-section {
+                padding: 30px 20px;
+            }
+            
+            .love-message {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .title {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .card h2 {
+                font-size: 1.5rem;
+            }
+            
+            .card p {
+                font-size: 1rem;
+            }
+            
+            .interactive-button {
+                padding: 12px 20px;
+                font-size: 1rem;
+                margin: 10px 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-hearts" id="hearts"></div>
+    
+    <div class="container">
+        <div class="header">
+            <h1 class="title">✨ Dwi Wulandari ✨</h1>
+            <p class="subtitle">Seseorang yang Spesial dalam Hidupku</p>
+        </div>
+
+        <div class="main-content">
+            <div class="card">
+                <h2>💖 Tentang Dirimu</h2>
+                <p>Dwi Wulandari, nama yang selalu terukir indah di dalam hatiku. Setiap huruf dalam namamu membawa kehangatan yang tak tergantikan. Kamu adalah sosok yang mampu membuat hari-hari yang biasa menjadi istimewa, dengan senyuman yang selalu menerangi.</p>
+            </div>
+
+            <div class="card">
+                <h2>🌸 Keindahan Dirimu</h2>
+                <p>Seperti bulan purnama yang menerangi malam, begitulah dirimu dalam hidupku. Setiap gerak dan kata-katamu adalah puisi yang tak pernah bosan untuk didengar. Kamu membawa kedamaian di tengah hiruk pikuk dunia.</p>
+            </div>
+        </div>
+
+        <div class="photo-section">
+            <div class="photo-frame">
+                <div class="photo-placeholder">
+                    🌹
+                </div>
+            </div>
+        </div>
+
+        <div class="message-section">
+            <div class="love-message">
+                "Dwi Wulandari, kamu adalah alasan mengapa senja terasa lebih indah, 
+                mengapa bintang-bintang tampak lebih bersinar, dan mengapa setiap hari 
+                terasa begitu berarti. Semoga kebersamaan kita selalu diselimuti 
+                kebahagiaan dan cinta yang tulus."
+            </div>
+            <div class="signature">
+                Dengan cinta, 💕<br>
+                Orang yang peduli padamu
+            </div>
+            
+            <button class="interactive-button" onclick="showSurprise()">💝 Klik untuk Kejutan</button>
+            <button class="interactive-button" onclick="playMusic()">🎵 Putar Musik</button>
+        </div>
+    </div>
+
+    <script>
+        // Floating hearts animation - optimized for mobile
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '💖';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDelay = Math.random() * 6 + 's';
+            heart.style.animationDuration = (Math.random() * 3 + 6) + 's';
+            
+            const heartsContainer = document.getElementById('hearts');
+            if (heartsContainer) {
+                heartsContainer.appendChild(heart);
+                
+                setTimeout(() => {
+                    if (heart.parentNode) {
+                        heart.remove();
+                    }
+                }, 9000);
+            }
+        }
+
+        // Create hearts periodically - less frequent on mobile
+        const isMobile = window.innerWidth <= 768;
+        const heartInterval = isMobile ? 1500 : 800;
+        setInterval(createHeart, heartInterval);
+
+        // Sparkle effect - optimized for performance
+        function createSparkle(x, y) {
+            if (document.getElementsByClassName('sparkle').length > 10) return; // Limit sparkles
+            
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.innerHTML = '✨';
+            sparkle.style.left = x + 'px';
+            sparkle.style.top = y + 'px';
+            sparkle.style.pointerEvents = 'none';
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => {
+                if (sparkle.parentNode) {
+                    sparkle.remove();
+                }
+            }, 2000);
+        }
+
+        // Add sparkles on mouse move - less frequent
+        let lastSparkle = 0;
+        document.addEventListener('mousemove', (e) => {
+            const now = Date.now();
+            if (now - lastSparkle > 200 && Math.random() < 0.05) { // Reduced frequency
+                createSparkle(e.clientX - 10, e.clientY - 10);
+                lastSparkle = now;
+            }
+        });
+
+        // Interactive functions
+        function showSurprise() {
+            const messages = [
+                "Kamu selalu berhasil membuat hariku lebih cerah! 🌟",
+                "Terima kasih sudah menjadi bagian istimewa dalam hidupku 💕",
+                "Setiap hari bersamamu adalah anugerah yang berharga 🎁",
+                "Senyummu adalah keajaiban yang selalu kutunggu 😊",
+                "Kamu adalah jawaban dari semua doa terbaikku 🙏",
+                "Dwi Wulandari, kamu adalah alasan aku selalu tersenyum 💖",
+                "Bersamamu, dunia terasa lebih indah dan penuh warna 🌈"
+            ];
+            
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            
+            // Create a better popup experience
+            if (confirm(randomMessage + "\n\n💝 Klik OK untuk efek kejutan!")) {
+                // Create celebration effect
+                for (let i = 0; i < 15; i++) {
+                    setTimeout(() => {
+                        createSparkle(
+                            Math.random() * window.innerWidth,
+                            Math.random() * window.innerHeight
+                        );
+                    }, i * 100);
+                }
+            }
+        }
+
+        function playMusic() {
+            const musicMessages = [
+                "🎵 'Seperti bintang di langit malam, kamu selalu menerangi jalan hidupku...' 💫",
+                "🎶 'Setiap detik bersamamu adalah melodi terindah dalam hidupku...' 🎼",
+                "🎵 'Cinta ini nyata, seperti hembusan angin yang menyentuh jiwa...' 💨",
+                "🎶 'Kamu adalah lagu yang selalu ingin kudengar setiap hari...' 🎤"
+            ];
+            
+            const randomMusic = musicMessages[Math.floor(Math.random() * musicMessages.length)];
+            alert(randomMusic + "\n\n💓 Musik cinta sedang bermain di hatiku untuk Dwi Wulandari!");
+        }
+
+        // Welcome animation - improved
+        window.addEventListener('load', () => {
+            // Delay welcome message
+            setTimeout(() => {
+                if (confirm("💖 Selamat datang, Dwi Wulandari! 💖\n\nWebsite ini dibuat khusus untukmu dengan sepenuh hati.\n\nKlik OK untuk mulai menjelajahi keindahan yang telah disiapkan!")) {
+                    // Create welcome sparkles
+                    for (let i = 0; i < 20; i++) {
+                        setTimeout(() => {
+                            createSparkle(
+                                Math.random() * window.innerWidth,
+                                Math.random() * window.innerHeight
+                            );
+                        }, i * 50);
+                    }
+                }
+            }, 2000);
+        });
+
+        // Prevent right-click context menu for better mobile experience
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        // Add touch support for mobile sparkles
+        document.addEventListener('touchstart', function(e) {
+            if (e.touches.length === 1) {
+                const touch = e.touches[0];
+                if (Math.random() < 0.3) {
+                    createSparkle(touch.clientX - 10, touch.clientY - 10);
+                }
+            }
+        }, { passive: true });
+    </script>
+</body>
+</html>
